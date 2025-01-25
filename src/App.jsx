@@ -1,17 +1,19 @@
-// import { useState } from 'react'
 import './App.css'
-// import { AppSidebar } from './components/app-sidebar'
-// import { SidebarProvider } from './components/ui/sidebar'
-// import CodeEditor from './components/CodeEditor'
 import Dashboard from './pages/Dashboard'
+import LandingPage from './pages/LandingPage'
+import { BrowserRouter as Router, Routes, Route } from 'react-router'
+import LoginPage from './pages/LoginPage'
 
 function App() {
-  // const [count, setCount] = useState(0)
 
   return (
-    <>
-      <Dashboard />
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/login" element={<LoginPage />} />
+      </Routes>
+      {/* <Dashboard /> */}
+    </Router>
   )
 }
 

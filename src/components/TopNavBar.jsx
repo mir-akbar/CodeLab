@@ -12,7 +12,7 @@ export function TopNavBar({
   onRunCode 
 }) {
   return (
-    <div className="h-12 min-h-[48px] border-b border-[#444] flex items-center justify-between px-2">
+    <div className="border-b border-[#444] flex items-center justify-between px-2 py-1">
       {/* Left Section */}
       <div className="flex items-center gap-2">
         <button

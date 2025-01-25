@@ -34,17 +34,17 @@ export default function CodeEditor() {
 
       <ResizablePanelGroup direction="vertical" className="flex-1">
         {/* Editor Section */}
-        <ResizablePanel defaultSize={70}>
+        <ResizablePanel id='editor-section' order={1} minSize={30}>
           <ResizablePanelGroup direction="horizontal" className="h-full">
             {/* Code Editor */}
-            <ResizablePanel defaultSize={65} minSize={30}>
+            <ResizablePanel id='code-editor' order={1} defaultSize={65} minSize={30}>
               <CodeEditorPanel />
             </ResizablePanel>
 
             <ResizableHandle />
 
             {/* Collaboration Panel */}
-            <ResizablePanel defaultSize={35} minSize={20}>
+            <ResizablePanel id='collab-panel' order={2} defaultSize={35} minSize={20}>
               <CollaborationPanel 
                 activeTab={activeTab}
                 setActiveTab={setActiveTab}
@@ -57,7 +57,7 @@ export default function CodeEditor() {
         {isOutputVisible && (
           <>
             <ResizableHandle />
-            <ResizablePanel defaultSize={30} minSize={20}>
+            <ResizablePanel id='output-panel' order={2} defaultSize={30} minSize={20}>
               <OutputPanel 
                 output={output}
                 onClose={() => setIsOutputVisible(false)}
