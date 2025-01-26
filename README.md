@@ -32,3 +32,25 @@ CodeLab is a web-based collaborative code editor designed for seamless real-time
 
 ### **Database**
 - **MongoDB (v6.x)**: For storing user data, project files, and logs.
+
+---
+## Directory Structure
+### **Frontend**
+    src/
+      components/
+              app-sidebar.jsx
+              CodeEditor.jsx
+              CodeEditorPanel.jsx
+              CollaborationPanel.jsx
+              login-form.jsx
+              OutputPanel.jsx
+              PathBreadCrumb.jsx
+              signup-form.jsx
+              TopNavBar.jsx
+              UserSection.jsx
+      pages/
+          Dashboard.jsx
+          LandingPage.jsx
+          LoginPage.jsx
+          SingUpPage.jsx
+      App.jsx
