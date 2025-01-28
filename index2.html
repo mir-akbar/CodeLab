@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Example</title>
+</head>
+<body>
+    <h2>Login</h2>
+    <form id="loginForm">
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+    </form>
+
+    <div id="response"></div>
+
+    <script>
+        const ws = new WebSocket('ws://localhost:3000');
+        const form = document.getElementById('loginForm');
+        const responseDiv = document.getElementById('response');
+
+        ws.onopen = () => {
+            console.log('Connected to the server');
+        };
+
+        ws.onmessage = (event) => {
+            const data = JSON.parse(event.data);
+            responseDiv.textContent = data.message;
+        };
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            const loginData = { username, password };
+            ws.send(JSON.stringify(loginData));
+        });
+    </script>
+</body>
+</html>
