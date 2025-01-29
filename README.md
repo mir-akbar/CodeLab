@@ -1,3 +1,7 @@
+Here's how you can modify your README to include an **Installation Setup** section. I added the necessary steps for setting up the project locally:
+
+---
+
 # **CodeLab: Collaborative Real-Time Code Editor**
 
 ## **Overview**
@@ -34,7 +38,8 @@ CodeLab is a web-based collaborative code editor designed for seamless real-time
 - **MongoDB (v6.x)**: For storing user data, project files, and logs.
 
 ---
-## Directory Structure
+
+## **Directory Structure**
 ### **Frontend**
     src/
       components/
@@ -54,3 +59,79 @@ CodeLab is a web-based collaborative code editor designed for seamless real-time
           LoginPage.jsx
           SingUpPage.jsx
       App.jsx
+
+---
+
+## **Installation Setup**
+
+To set up **CodeLab** locally on your machine, follow these steps:
+
+### **Prerequisites**
+- Ensure you have the following tools installed on your system:
+  - **Node.js (v18.x)**: [Install Node.js](https://nodejs.org/)
+  - **MongoDB (v6.x)**: [Install MongoDB](https://www.mongodb.com/try/download/community)
+  - **Git**: [Install Git](https://git-scm.com/)
+
+### **Steps to Set Up**
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/yourusername/codelab.git
+   cd codelab
+   ```
+
+2. **Install dependencies:**
+
+   - **Frontend dependencies**: Navigate to the frontend directory and install the required dependencies.
+
+     ```bash
+     cd frontend
+     npm install
+     ```
+
+   - **Backend dependencies**: Navigate to the backend directory and install the required dependencies.
+
+     ```bash
+     cd backend
+     npm install
+     ```
+
+3. **Set up environment variables:**
+
+   - In the **backend** folder, create a `.env` file and set the necessary environment variables. Example:
+
+     ```
+     MONGO_URI=your_mongodb_connection_string
+     JWT_SECRET=your_jwt_secret_key
+     ```
+
+4. **Run MongoDB**:
+   - Ensure MongoDB is running on your local machine or use a cloud MongoDB instance.
+   - If running locally, start the MongoDB server with the following command:
+   
+     ```bash
+     mongod
+     ```
+
+5. **Start the backend server**:
+
+   ```bash
+   cd backend
+   npm start
+   ```
+
+6. **Start the frontend server**:
+
+   ```bash
+   cd frontend
+   npm start
+   ```
+
+   This will open the app in your browser at `http://localhost:3000`.
+
+---
+
+Now you're all set to start collaborating with others on CodeLab! Feel free to explore the features and dive into the development process.
+
+---
