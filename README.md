@@ -1,13 +1,8 @@
-Here's how you can modify your README to include an **Installation Setup** section. I added the necessary steps for setting up the project locally:
-
----
-
 # **CodeLab: Collaborative Real-Time Code Editor**
 
 ## **Overview**
 CodeLab is a web-based collaborative code editor designed for seamless real-time coding experiences. It combines modern technologies to enable live code syncing, syntax highlighting, and in-app communication for developers working together remotely.
 
----
 
 ## **Features**
 - **Real-Time Collaboration**: Work on code simultaneously with live updates across users.
@@ -20,7 +15,6 @@ CodeLab is a web-based collaborative code editor designed for seamless real-time
 - **File Management**: Organize files and folders with an intuitive project structure interface.
 - **Code Execution**: Execute code for supported languages within the app.
 
----
 
 ## **Technologies Used**
 ### **Frontend**
@@ -37,7 +31,6 @@ CodeLab is a web-based collaborative code editor designed for seamless real-time
 ### **Database**
 - **MongoDB (v6.x)**: For storing user data, project files, and logs.
 
----
 
 ## **Directory Structure**
 ### **Frontend**
@@ -60,7 +53,6 @@ CodeLab is a web-based collaborative code editor designed for seamless real-time
           SingUpPage.jsx
       App.jsx
 
----
 
 ## **Installation Setup**
 
@@ -130,8 +122,6 @@ To set up **CodeLab** locally on your machine, follow these steps:
 
    This will open the app in your browser at `http://localhost:3000`.
 
----
 
 Now you're all set to start collaborating with others on CodeLab! Feel free to explore the features and dive into the development process.
 
----
