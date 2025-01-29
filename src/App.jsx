@@ -1,5 +1,5 @@
 import './App.css'
-import Dashboard from './pages/Dashboard'
+// import CodeWorkspace from './pages/CodeWorkspace'
 import LandingPage from './pages/LandingPage'
 import { BrowserRouter as Router, Routes, Route } from 'react-router'
 import LoginPage from './pages/LoginPage'
@@ -14,7 +14,7 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignUpPage />} />
       </Routes>
-      {/* <Dashboard /> */}
+      {/* <CodeWorkspace /> */}
     </Router>
   )
 }
