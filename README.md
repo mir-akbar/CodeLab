@@ -1,7 +1,3 @@
-Here's how you can modify your README to include an **Installation Setup** section. I added the necessary steps for setting up the project locally:
-
----
-
 # **CodeLab: Collaborative Real-Time Code Editor**
 
 ## **Overview**
