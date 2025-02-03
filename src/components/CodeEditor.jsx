@@ -35,22 +35,24 @@ export default function CodeEditor() {
       <ResizablePanelGroup direction="vertical" className="flex-1">
         {/* Editor Section */}
         <ResizablePanel id='editor-section' order={1} minSize={30}>
-          <ResizablePanelGroup direction="horizontal" className="h-full">
-            {/* Code Editor */}
-            <ResizablePanel id='code-editor' order={1} defaultSize={65} minSize={30}>
-              <CodeEditorPanel />
-            </ResizablePanel>
+          <div className="h-full pt-2"> {/* Added padding top here */}
+            <ResizablePanelGroup direction="horizontal" className="h-full">
+              {/* Code Editor */}
+              <ResizablePanel id='code-editor' order={1} defaultSize={65} minSize={30}>
+                <CodeEditorPanel />
+              </ResizablePanel>
 
-            <ResizableHandle />
+              <ResizableHandle />
 
-            {/* Collaboration Panel */}
-            <ResizablePanel id='collab-panel' order={2} defaultSize={35} minSize={20}>
-              <CollaborationPanel 
-                activeTab={activeTab}
-                setActiveTab={setActiveTab}
-              />
-            </ResizablePanel>
-          </ResizablePanelGroup>
+              {/* Collaboration Panel */}
+              <ResizablePanel id='collab-panel' order={2} defaultSize={35} minSize={20}>
+                <CollaborationPanel 
+                  activeTab={activeTab}
+                  setActiveTab={setActiveTab}
+                />
+              </ResizablePanel>
+            </ResizablePanelGroup>
+          </div>
         </ResizablePanel>
 
         {/* Output Panel */}

@@ -5,6 +5,10 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { useNavigate } from "react-router"
+import { signUp } from "@/utils/auth"
+import { CognitoUserPool } from 'amazon-cognito-identity-js'
+import { cognitoConfig } from '@/config/cognito'
+
 
 export function SignUpForm({ className, ...props }) {
   const [formData, setFormData] = useState({
@@ -12,11 +16,12 @@ export function SignUpForm({ className, ...props }) {
     email: "",
     password: "",
     confirmPassword: "",
-  })
+  });
   const [errors, setErrors] = useState({
     password: "",
     confirmPassword: "",
-  })
+    general: ""
+  });
 
   const navigate = useNavigate()
 
@@ -53,12 +58,24 @@ export function SignUpForm({ className, ...props }) {
   }
 
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     if (validatePasswords()) {
-      // Proceed with form submission
-      console.log("Form submitted:", formData)
+      signUp(
+        formData.name,
+        formData.email,
+        formData.password,
+        (err, result) => {
+          if (err) {
+            console.error(err);
+            setErrors({ ...errors, general: err.message });
+            return;
+          }
+          navigate('/verify', { state: { email: formData.email } });
+        }
+      );
     }
-  }
+  };
+
 
   return (
     <div className={cn("flex flex-col gap-6", className)} {...props}>
@@ -69,6 +86,11 @@ export function SignUpForm({ className, ...props }) {
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSubmit}>
+              {errors.general && (
+                <p className="text-red-500 text-sm mb-4" role="alert">
+                  {errors.general}
+                </p>
+              )}
             <div className="flex flex-col gap-6">
               <div className="grid gap-2">
                 <Label htmlFor="name">Name</Label>

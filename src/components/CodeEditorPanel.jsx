@@ -1,9 +1,8 @@
-// import React from 'react';
 import { Editor } from '@monaco-editor/react';
 
 export function CodeEditorPanel() {
   return (
-    <div className="h-full border border-[#444] m-2 mr-0 rounded-xl overflow-hidden">
+    <div className="h-full border border-[#444]  mr-0 rounded-xl overflow-hidden">
       <Editor
         width="100%"
         height="100%"
